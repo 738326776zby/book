@@ -4,8 +4,11 @@
     <list default="true" id="c88ec3be-9160-4a24-a7b3-bf84750bbc3a" name="Default" comment="">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
+>>>>>>> parent of 55df4d9... 添加index.css
 =======
 >>>>>>> parent of 55df4d9... 添加index.css
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
@@ -38,12 +41,17 @@
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.20754717">
               <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
 =======
             <state vertical-scroll-proportion="0.29056603">
               <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
 >>>>>>> parent of 28f57ad... delete index
+=======
+            <state vertical-scroll-proportion="0.29056603">
+              <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+>>>>>>> parent of 55df4d9... 添加index.css
 =======
             <state vertical-scroll-proportion="0.29056603">
               <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
@@ -203,7 +211,11 @@
   <component name="ToolWindowManager">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <frame x="0" y="9" width="1382" height="744" extended-state="0" />
+=======
+    <frame x="0" y="9" width="1382" height="744" extended-state="1" />
+>>>>>>> parent of 55df4d9... 添加index.css
 =======
     <frame x="0" y="9" width="1382" height="744" extended-state="1" />
 >>>>>>> parent of 55df4d9... 添加index.css
@@ -251,12 +263,17 @@
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.20754717">
           <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
 =======
         <state vertical-scroll-proportion="0.29056603">
           <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
 >>>>>>> parent of 28f57ad... delete index
+=======
+        <state vertical-scroll-proportion="0.29056603">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+>>>>>>> parent of 55df4d9... 添加index.css
 =======
         <state vertical-scroll-proportion="0.29056603">
           <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
