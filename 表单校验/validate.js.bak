@@ -1,0 +1,87 @@
+/*
+* create by :张博亚
+* */
+(function (root, factory, plug) {
+    // root 代表作用域
+    // factory 代表工厂函数
+    factory(root.jQuery, plug);
+})(window, function ($, plug) {
+    // 收集校验规则对象
+    var _RULES_ = {
+        // 长度限制 单位：非字符
+        // data- length = 20
+        'length': function () {
+            var $this = this;
+            var _length = $this.val().length;
+            var _sign = $this.data('length');
+            var _val = $this.val();
+            if (_length > _sign) {
+                $this.val(_val.substring(0, _sign));
+            }
+            return true;
+        },
+        // 数字(浮点数)
+        // 精确保留两位小数
+        // 小于 10的14幂-0.01
+        // 小数位数只能输入三位 ，四舍五入取两位
+        // 只能输入数字
+        'number': function () {
+            var $this = this;
+            var _val = $this.val();
+            var range = $this.data('range');
+            if (range) {
+                $this.min = Number(range.split(',')[0]);
+                $this.data('plus', !($this.min < 0));// true 只能为正数
+                $this.min < 0 && ($this.data('plus', false));
+                $this.max = Number(range.split(',')[1]);
+            }
+             //console.log($this.data('r'));
+            _val = ($this.data('plus') ? '' : (_val[0] === '-' ? '-' : ''))
+                + _val.replace($this.data('integer') ? /[^\d]/g : /[^\d.]/g, '');
+            // 小于 10 的 14 次幂-0.01
+            (Number(_val) > ($this.max || (Math.pow(10, 14) - 0.01))
+            || Number(_val) < ($this.min || (-Math.pow(10, 14) + 0.01)))
+            && (_val = _val.slice(0, _val.length - 1));
+            if (_val.search(/\./) !== -1) {
+                var reg = new RegExp(/\./, 'g');
+                var result;
+                var number = 0;
+                // 存在两个'.' 则把第2个'.'删除
+                while ((result = reg.exec(_val)) !== null) {
+                    ++number;
+                    number === 2
+                    && (_val = _val.slice(0, result.index));
+                }
+            }
+            $this.val(_val);
+            return {
+                'sign': false,
+                'describe': 'round'
+            };
+        }
+
+    };
+    $.fn[plug] = function () {
+        this.$files = this.find('input,select,textarea');
+        this.$files.on('keyup', function () {
+            var result;
+            var $this = $(this);
+            $.each(_RULES_, function (rule, func) {
+                if ($this.data(rule)) {
+                    result = func.call($this);
+                    // console.log(_.isObject(result));
+                    if (_.isObject(result)) {
+                        $this.on('change', function () {
+                            var _val = $this.val();
+                            switch (result.describe) {
+                                case  'round':
+                                    _val.search(/\./) !== -1 && (_val = Number(_val).toFixed(2));
+                            }
+                            $this.val(_val);
+                        });
+                    }
+                }
+            });
+        });
+    };
+}, 'Validate');

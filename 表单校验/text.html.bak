@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+        .form-group {
+            width: 500px;
+            margin: auto;
+        }
+
+        label {
+            width: 200px;
+        }
+
+        input {
+            width: 200px;
+        }
+
+        .error {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<h1>demo</h1>
+<form id="myform">
+    <!--data-length   长度校验
+        data-integer  是否为整数或浮点数
+                      true: 整数
+                      false : 可正数可浮点数
+        data- plus     是否一定为正数
+                      true: 只能正数
+                      false ：可正数可负数
+        data-range    前必须加 data-number = 'true'
+                      数字输入范围校验
+                      注：输入规则为 上线和 下线
+                      若上线或下线不存在 则空但逗号不可少-->
+    <h3>长度校验</h3>
+    <div class="form-group">
+        <label>长度校验</label>
+        <input type="text" data-length="4" data-number placeholder="长度为4">
+    </div>
+    <h3>数字校验</h3>
+    <div class="form-group">
+        <label>整数，正数</label>
+        <input type="text" data-number="true" data-plus="true" data-integer='true' placeholder="整数，正数">
+    </div>
+    <div class="form-group">
+        <label>整数，负数</label>
+        <input type="text" data-number="true" data-plus="false" data-integer='true' placeholder="整数，负数">
+    </div>
+    <div class="form-group">
+        <label>小数，正数</label>
+        <input type="text" data-number="true" data-plus="true" data-integer='false' placeholder="整数，正数">
+    </div>
+    <div class="form-group">
+        <label>小数，负数</label>
+        <input type="text" data-number="true" data-plus="false" data-integer='false' placeholder="小数，负数">
+    </div>
+    <h3>范围限制</h3>
+    <div class="form-group">
+        <label>数字范围限制</label>
+        <input type="text" data-range="-1,100" data-number="true" data-integer="false"  placeholder="此处输入范围为0-100">
+    </div>
+</form>
+<script src="jquery.js"></script>
+<script src="underscore.js"></script>
+<script src="validate.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#myform').Validate();
+    });
+</script>
+</body>
+</html>
