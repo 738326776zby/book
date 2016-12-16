@@ -1,4 +1,3 @@
-/* eslint-disable */
 /**
  * @author:jQuery Foundation
  * @file: jQuery
